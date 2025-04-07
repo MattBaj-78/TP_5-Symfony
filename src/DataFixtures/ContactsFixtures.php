@@ -4,14 +4,32 @@ namespace App\DataFixtures;
 
 use Faker\Factory;
 use App\Entity\Contact;
-use Doctrine\Bundle\FixturesBundle\Fixture;
+use App\Entity\Categorie;
 use Doctrine\Persistence\ObjectManager;
+use Doctrine\Bundle\FixturesBundle\Fixture;
 
 class ContactsFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
         $faker=Factory::create("fr_FR");
+
+        $categorie=new Categorie();
+        $categorie  ->setLibelle("Professionnel")
+                    ->setDescription($faker->sentence(50))
+                    ->setImage("http://lorempixel.com/400/200/business");
+        $manager->persist($categorie);
+        $categorie=new Categorie();
+        $categorie  ->setLibelle("Sport")
+                    ->setDescription($faker->sentence(50))
+                    ->setImage("http://lorempixel.com/400/200/sports");
+        $manager->persist($categorie);
+        $categorie=new Categorie();
+        $categorie  ->setLibelle("Privé")
+                    ->setDescription($faker->sentence(50))
+                    ->setImage("http://lorempixel.com/400/200/people");
+        $manager->persist($categorie);
+
         $genres=["male","female"];
         
 

@@ -11,7 +11,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class ContactController extends AbstractController
 {
     #[Route('/contacts', name: 'app_contacts', methods:  'GET' )]
-    public function listeContact(ContactRepository $repo): Response
+    public function listeContacts(ContactRepository $repo): Response
     {
         $Contacts=$repo->findAll();
         return $this->render('contact/listeContacts.html.twig',
