@@ -32,37 +32,7 @@
         <div class="row">
             {% for leContact in laCategorie.contacts %}
                 <div class="col-sm-12 col-md-12 col-lg-4 col-xl-3">
-                    <div class="card mb-3">
-                        <h4 class="card-header"> {{ leContact.nom }} {{ leContact.prenom }} </h4>
-
-                        <img style="font-size:1.125rem;text-anchor:middle" class="avatar mx-auto my-3" src=" {{ leContact.avatar }} " max-width="200px" height="auto" aria-label="Placeholder: Image cap" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180">
-                            <rect width="100%" height="100%" fill="#868e96"></rect>
-                            <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
-                        </img>
-
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"> {{ leContact.rue }} </li>
-                            <li class="list-group-item"> {{ leContact.cp }} </li>
-                            <li class="list-group-item"> {{ leContact.ville }} </li>
-                            <li class="list-group-item"> {{ leContact.mail }} </li>
-                    
-                            <li class="list-group-item">
-                                {% if leContact.sexe == 0 %}
-                                    <span class="badge badge-info">Homme</span>
-                                    {% else %}
-                                        <span class="badge badge-info">Femme</span>
-                                {% endif %}
-                            </li>
-
-                            <li class="list-group-item">
-                                <a href=" {{path('ficheCategorie' , {'id': leContact.categorie.id})}} "> {{ leContact.categorie.libelle }} </a>
-                            </li>
-                        </ul>
-
-                        <div class="card-body">
-                            <a href=" {{path('ficheContact', {'id': leContact.id })}} " class="btn btn-success btn-block text-center">Détails ...</a>
-                        </div>
-                    </div>
+                    {{ include('contact/_ficheContact.html.twig', {'mode': 'ficheCategorie'}) }}
                 </div>
             {% endfor %}
         </div>
