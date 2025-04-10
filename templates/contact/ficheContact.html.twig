@@ -27,9 +27,13 @@
                         <li class="list-group-item">
                             {% if leContact.sexe == 0 %}
                                 <span class="badge badge-info">Homme</span>
-                            {% else %}
-                                <span class="badge badge-info">Femme</span>
+                                {% else %}
+                                    <span class="badge badge-info">Femme</span>
                             {% endif %}
+                        </li>
+
+                        <li class="list-group-item">
+                            <a href=" {{path('ficheCategorie' , {'id': leContact.categorie.id})}} "> {{ leContact.categorie.libelle }} </a>
                         </li>
                     </ul>
                 </div>
