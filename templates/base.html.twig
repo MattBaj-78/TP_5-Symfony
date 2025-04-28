@@ -27,9 +27,15 @@
 
             <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav mr-auto">
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path("app_contacts")}}">Liste des Contacts</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Gestion des Contacts</a>
+    
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{path("app_contacts")}}">Liste des Contacts</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{path('listeContactsSexe', {'sexe': 0})}}">Liste des Hommes</a>
+                            <a class="dropdown-item" href="{{path('listeContactsSexe', {'sexe': 1})}}">Liste des Femmes</a>
+                        </div>
                     </li>
 
                     <li class="nav-item">
