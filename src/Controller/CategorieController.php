@@ -41,7 +41,6 @@ class CategorieController extends AbstractController
         }
 
         $data=substr($data, 0, -1);
-        dd($data);
 
         return $this->render('categorie/nbContactsParCat.html.twig',
         [
