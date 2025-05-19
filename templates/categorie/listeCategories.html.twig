@@ -23,6 +23,8 @@
                     <div class="card-body">
                         <a href=" {{path("ficheCategorie", {'id': laCategorie.id})}} " class="btn btn-success btn-block text-center">Détails ...</a>
                     </div>
+
+                    <h5 class="card-header"> <span class="badge badge-warning"> {{ laCategorie.contacts|length }} contacts</span> </h5>
                 </div>
             </div>
         {% endfor %}
